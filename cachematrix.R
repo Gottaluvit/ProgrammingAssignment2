@@ -29,9 +29,9 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
       m <- x$getInv()         ##Recalls the inverted matrix from cache
-      if(!is.na(m)) {         ##If inverted matrix is not NA give message
+      if(!is.na(m)) {         ##If inverted matrix is not NA (aka it already
             message("getting cached data")
-            return(m)         ##and return (m)
+            return(m)         ##exists in cache) give message and return (m)
       }
       data <- x$get()        ##These 4 lines calculate/print the inverted 
       m <- solve(data, ...)  ## matrix if it can't be pulled from cache 
